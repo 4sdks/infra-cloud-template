@@ -1,3 +1,5 @@
+# Lab Clase 4 - Verificacion del pipeline CI/CD con GitHub Actions
+
 """Servicio patron: the reference stateful HTTP service used in every class.
 
 Contract (the class-1 Moodle lab builds a minimal hand-written version of the
