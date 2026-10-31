@@ -88,6 +88,7 @@ def metrics() -> Response:
     PREDICTIONS.inc(0)
     return Response(content=generate_latest(), media_type=CONTENT_TYPE_LATEST)
 
+MODEL_VERSION = "v1.1"
 
 @app.post("/predict")
 def predict(req: PredictRequest) -> dict[str, object]:
@@ -107,7 +108,7 @@ def predict(req: PredictRequest) -> dict[str, object]:
     idx = int(proba.argmax())
     PREDICTIONS.inc()
     PREDICT_LATENCY.observe(time.time() - start)
-    return {"class": bundle["target_names"][idx], "confidence": float(proba[idx])}
+    return {"class": bundle["target_names"][idx], "confidence": float(proba[idx]), "model_version": MODEL_VERSION,}
 
 
 if __name__ == "__main__":
