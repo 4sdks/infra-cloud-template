@@ -33,10 +33,10 @@ grafana:
   resources:
     requests:
       cpu: 50m
-      memory: 128Mi
+      memory: 256Mi
     limits:
       cpu: 200m
-      memory: 256Mi
+      memory: 512Mi
   sidecar:
     # Loads observability/dashboards/*.json from ConfigMaps labeled
     # grafana_dashboard=1, in any namespace.
