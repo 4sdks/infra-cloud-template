@@ -5,3 +5,6 @@ __pycache__/
 .venv/
 tests/
 *.joblib
+.env
+.git/
+*.log
